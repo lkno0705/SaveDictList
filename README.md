@@ -9,8 +9,11 @@ INSTALLATION:
 1. download or clone this repository
 2. unzip and open the directory
 3. open up the Python Interpreter
+
 4.Type:
+
   import sys
+  
   print(sys.path)
 5. hit return to execute
 6. Open the Path that is shown in the Interpreter
