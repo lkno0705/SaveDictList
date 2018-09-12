@@ -1,26 +1,26 @@
 # SaveDictList
 Simple python script that allows you to save or import a List or Dictionary into/from a .txt file, just by calling some imported functions.
 
-SaveDictList.py is the Python3 Module
+SaveDictList.py is the Python3 Module<br/>
 
-SaveDictList_2_7.py is the Python2.7 Module
+SaveDictList_2_7.py is the Python2.7 Module<br/>
 
-INSTALLATION:
-1. download or clone this repository
-2. unzip and open the directory
-3. open up the Python Interpreter
-4.Type:
-  import sys
-  print(sys.path)
-5. hit return to execute
-6. Open the Path that is shown in the Interpreter
-7. Copy the .py File for your Python-version into this directory
+INSTALLATION:<br/>
+1. download or clone this repository<br/>
+2. unzip and open the directory<br/>
+3. open up the Python Interpreter<br/>
+4.Type:<br/>
+  import sys<br/>
+  print(sys.path)<br/>
+5. hit return to execute<br/>
+6. Open the Path that is shown in the Interpreter<br/>
+7. Copy the .py File for your Python-version into this directory<br/>
 
-USAGE:
-The Module contains 4 Main functions:
-1. saveList(List)
-2. importList()
-3. saveDict(Dict)
-4. importDict()
+USAGE:<br/>
+The Module contains 4 Main functions:<br/>
+1. saveList(List)<br/>
+2. importList()<br/>
+3. saveDict(Dict)<br/>
+4. importDict()<br/>
 
 The saveList()-Function takes exactly 1 Argument, which is the list you want to save into a .txt File, aswell as the saveDict()-Function. The saveDict()-Function needs to know the name of the Dictionary you want to save. The .txt-Files are saved in your working directory (the directory where your Python programm/script is in) and are named: Save_List_currentDate or Save_Dict_currentDate. I'll add the possibility to enter your own Path, to save the Files, later on. The importList()- and importDict()-Function return a List/Dictionary which you can use right away.
