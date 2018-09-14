@@ -6,8 +6,8 @@ import time
 
 # dd-mm-yyyy format
 
-#list = ["a","b","c","d","e","f","g","h"]
-#dict = {"red":"rot", "blau":"Blue"}
+list = ["a","b","c","d","e","f","g","h"]
+dict = {"red":"rot", "blau":"Blue"}
 
 def saveList(list):
     
@@ -20,7 +20,7 @@ def saveList(list):
     
     Fobj.close()
     
-    Done()
+    Done("List")
     
 def importList():
     
@@ -51,7 +51,7 @@ def saveDict(Dict):
         Fobj.write(Keys[x]+":"+Values[x]+"\n")
         
     Fobj.close()   
-    Done()
+    Done("Dict")
  
 def importDict():
     
@@ -77,12 +77,14 @@ def getPath(Type):
     
     return File
 
-def Done():
+def Done(Type):
     
+    Path = getPath(Type)
+
     MainWindow = tk.Tk()
-    MainWindow.geometry("100x10")
+    MainWindow.geometry("500x20")
     
-    done = Label(MainWindow, text="DONE!")
+    done = Label(MainWindow, text="DONE! Path: "+str(Path))
     done.pack()
     
     MainWindow.mainloop()
@@ -96,8 +98,8 @@ def FileDialog():
     
     return Path
 
-#saveList(list)
-#saveDict(dict)
 #Liste1 = importList()
 #print(Liste1)
+#saveList(list)
+#saveDict(dict)
 #importDict()
