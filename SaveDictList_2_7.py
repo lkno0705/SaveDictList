@@ -20,7 +20,7 @@ def saveList(list):
     
     Fobj.close()
     
-    Done()
+    Done("List")
     
 def importList():
     
@@ -51,7 +51,7 @@ def saveDict(Dict):
         Fobj.write(Keys[x]+":"+Values[x]+"\n")
         
     Fobj.close()   
-    Done()
+    Done("Dict")
  
 def importDict():
     
@@ -66,7 +66,7 @@ def importDict():
         
         Dict[str(X[0])] = str(X[1])
         
-    print(Dict)
+#    print(Dict)
     
     return Dict
         
@@ -77,12 +77,14 @@ def getPath(Type):
     
     return File
 
-def Done():
+def Done(Type):
+    
+    Path = getPath(Type)
     
     MainWindow = tk.Tk()
-    MainWindow.geometry("100x10")
+    MainWindow.geometry("500x20")
     
-    done = Label(MainWindow, text="DONE!")
+    done = Label(MainWindow, text="DONE! Path: "+str(Path))
     done.pack()
     
     MainWindow.mainloop()
