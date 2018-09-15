@@ -6,8 +6,8 @@ import time
 
 # dd-mm-yyyy format
 
-list = ["a","b","c","d","e","f","g","h"]
-dict = {"red":"rot", "blau":"Blue"}
+#list = ["a","b","c","d","e","f","g","h"]
+#dict = {"red":"rot", "blau":"Blue"}
 
 def saveList(list):
     
@@ -20,12 +20,12 @@ def saveList(list):
     
     Fobj.close()
     
-    Done("List")
+    Done(File)
     
 def importList():
     
     List = []
-    Path=FileDialog()
+    Path=FileDialog("")
     Fobj = open(Path, "r")
     
     for line in Fobj:
@@ -51,13 +51,13 @@ def saveDict(Dict):
         Fobj.write(Keys[x]+":"+Values[x]+"\n")
         
     Fobj.close()   
-    Done("Dict")
+    Done(File)
  
 def importDict():
     
     Dict = {}
     
-    File = FileDialog()
+    File = FileDialog("")
     Fobj = open(File, "r")
     
     for line in Fobj:
@@ -65,23 +65,20 @@ def importDict():
         X = X.split(":")
         
         Dict[str(X[0])] = str(X[1])
-        
-    print(Dict)
     
     return Dict
         
         
 def getPath(Type):
-    Path = os.getcwd()
+    Path = FileDialog("dir")
     File = Path+"/Saved_"+Type+"_"+time.strftime("%d-%m-%Y")+".txt"
     
     return File
 
-def Done(Type):
-    
-    Path = getPath(Type)
+def Done(Path):
 
     MainWindow = tk.Tk()
+    MainWindow.title("Save complete!")
     MainWindow.geometry("500x20")
     
     done = Label(MainWindow, text="DONE! Path: "+str(Path))
@@ -89,12 +86,21 @@ def Done(Type):
     
     MainWindow.mainloop()
 
-def FileDialog():
+def FileDialog(Type):
     
     MainWindow = tk.Tk()
     MainWindow.withdraw()
     
-    Path = filedialog.askopenfilename()
+    if Type == "dir":
+        MainWindow.update()
+        Path = filedialog.askdirectory(
+            title = "Select directory")
+        MainWindow.destroy()
+    else:
+        MainWindow.update()
+        Path = filedialog.askopenfilename(
+            defaultextension = ".txt"
+            title = "Select your Dict/List Save File")
     
     return Path
 
