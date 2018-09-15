@@ -23,4 +23,4 @@ The Module contains 4 Main functions:<br/>
 3. saveDict(Dict)<br/>
 4. importDict()<br/>
 
-The saveList()-Function takes exactly 1 Argument, which is the list you want to save into a .txt File, aswell as the saveDict()-Function. The saveDict()-Function needs to know the name of the Dictionary you want to save. The .txt-Files are saved in your working directory (the directory where your Python programm/script is in) and are named: Save_List_currentDate or Save_Dict_currentDate. I'll add the possibility to enter your own Path, to save the Files, later on. The importList()- and importDict()-Function return a List/Dictionary which you can use right away.
+The saveList()-Function takes exactly 1 Argument, which is the list you want to save into a .txt File, aswell as the saveDict()-Function. The saveDict()-Function needs to know the name of the Dictionary you want to save. The .txt-Files are saved in your chosen directory and are named: Save_List_currentDate or Save_Dict_currentDate. The importList()- and importDict()-Function return a List/Dictionary which you can use right away.
