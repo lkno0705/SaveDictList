@@ -99,7 +99,7 @@ def FileDialog(Type):
     else:
         MainWindow.update()
         Path = filedialog.askopenfilename(
-            defaultextension = ".txt"
+            defaultextension = ".txt",
             title = "Select your Dict/List Save File")
     
     return Path
